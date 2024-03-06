@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 15px;
+}
+
+.new-member-form {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #167F92; 
+}
+
+.new-member-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.new-member-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.new-member-form input[type="text"],
+.new-member-form input[type="email"],
+.new-member-form select {
+    width: 100%; 
+    max-width: 500 px;
+    height: 40px; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    border: 1px solid #167F92; 
+}
+.form-fields-wrapper{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.new-member-form input[type="submit"] {
+    display: block;
+    width: auto; 
+    padding: 10px 20px; 
+    background-color: #5cb85c;
+    border: 0;
+    border-radius: 3px;
+    color: #ffffff;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.new-member-form input[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+.error-message {
+    color: #d9534f;
+    font-size: 0.875em;
+}
+
+@media (max-width: 768px) {
+    .new-member-form {
+        margin: 0;
+        padding: 10px;
+    }
+    .new-member-form input[type="submit"] {
+        width: 100%;
+    }
+}
+
+.new-member-form button {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #167F92;
+    color: white;
+    font-size: 1em;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease-in-out; 
+    margin-top: 15px;
+  }
+  
+  .new-member-form button:hover, .new-member-form button:focus {
+    background-color: #024457; 
+    outline: none; 
+  }
+ 
+  .new-member-form button:disabled {
+    background-color: #cccccc; 
+    cursor: not-allowed; 
+  }
+  

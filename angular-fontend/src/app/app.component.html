@@ -1,0 +1,49 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card-custom">
+        <div class="card-body">
+          <h2 class="card-title text-center py-3">{{ title }}</h2>
+          <div class="text-center">
+              <a routerLink="members-list" class="btn btn-light" 
+              routerLinkActive="active">Members list</a>
+
+              <a routerLink="new-member" class="btn btn-light" 
+              routerLinkActive="active">New member </a>
+           
+          </div>
+        </div>
+      </div>
+      <table class="table-custom">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Address</th>
+            <th>Croatian PIN</th>
+            <th>Member type</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Package Type</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let member of members">
+            <td>{{member.idMembers}}</td>
+            <td>{{member.fullName}}</td>
+            <td>{{member.address}}</td>
+            <td>{{member.croatianPIN}}</td>
+            <td>{{member.memberType}}</td>
+            <td>{{member.email}}</td>
+            <td>{{member.gender}}</td>
+            <td>{{member.packageType}}</td>
+           
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,77 @@
+<form [formGroup]="newMemberForm" (submit)="onSubmit()" class="new-member-form">
+    <div class="form-fields-wrapper">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" formControlName="firstName">
+      <div *ngIf="newMemberForm.get('firstName')?.errors && (newMemberForm.get('firstName')?.dirty || newMemberForm.get('firstName')?.touched)">
+        <p *ngIf="newMemberForm.get('firstName')?.errors?.['required']">First name is required.</p>
+        <p *ngIf="newMemberForm.get('firstName')?.errors?.['minlength'] || newMemberForm.get('firstName')?.errors?.['maxlength']">First name must be between 2 and 255 characters.</p>
+      </div>
+    </div>
+  
+    <div class="form-fields-wrapper">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" formControlName="lastName">
+      <div *ngIf="newMemberForm.get('lastName')?.errors && (newMemberForm.get('lastName')?.dirty || newMemberForm.get('lastName')?.touched)">
+        <p *ngIf="newMemberForm.get('lastName')?.errors?.['required']">Last name is required.</p>
+        <p *ngIf="newMemberForm.get('lastName')?.errors?.['minlength'] || newMemberForm.get('lastName')?.errors?.['maxlength']">Last name must be between 2 and 255 characters.</p>
+      </div>
+    </div>
+
+    <div class="form-fields-wrapper">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email">
+      <div *ngIf="newMemberForm.get('email')?.errors && (newMemberForm.get('email')?.dirty || newMemberForm.get('email')?.touched)">
+        <p *ngIf="newMemberForm.get('email')?.errors?.['required']">Email is required.</p>
+        <p *ngIf="newMemberForm.get('email')?.errors?.['email']">Invalid email format.</p>
+        <p *ngIf="newMemberForm.get('email')?.errors?.['maxlength']">Email must be less than 255 characters.</p>
+      </div>
+    </div>
+
+    <div class="form-fields-wrapper">
+      <label for="address">Address</label>
+      <input type="text" id="address" formControlName="address">
+    </div>
+  
+    <div class="form-fields-wrapper">
+      <label for="croatianPIN">Croatian PIN</label>
+      <input type="text" id="croatianPIN" formControlName="croatianPIN">
+    </div>
+  
+    <div class="form-fields-wrapper">
+      <label for="memberTypeId">Member Type</label>
+      <select id="memberTypeId" formControlName="memberTypeId">
+        <option value="">Select a type</option>
+        <option value="1">Personal</option>
+        <option value="2">Legal</option>
+        <p *ngIf="newMemberForm.get('memberTypeId')?.errors?.['required']">Member type is required.</p>
+      </select>
+     
+    </div>
+
+    <div class="form-fields-wrapper">
+      <label for="gender">Gender</label>
+      <select id="gender" formControlName="gender">
+        <option value="">Select gender</option>
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+        <option value="N">Non-binary/Prefer not to say</option>
+        <p *ngIf="newMemberForm.get('gender')?.errors?.['required']">*.</p>
+      </select>
+     
+    </div>
+
+    <div class="form-fields-wrapper">
+      <label for="packageType">Package Type</label>
+      <select id="packageType" formControlName="packageType">
+        <option value="">Select a package</option>
+        <option value="1">Start</option>
+        <option value="2">Basic</option>
+        <option value="3">Classic</option>
+        <option value="4">Exclusive</option>
+        <p *ngIf="newMemberForm.get('packageType')?.errors?.['required']">Package type is required.</p>
+      </select>
+    
+    </div>
+
+    <button type="submit" [disabled]="!newMemberForm.valid" class="button-custom">Save New Member</button>
+</form>
